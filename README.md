@@ -1,9 +1,30 @@
 # Landing Page Project
 
-## Instructions
+## Project Description
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+This project is a simple, interactive landing page that dynamically updates the navigation bar as sections are added or removed. It highlights the active section in the viewport and provides smooth scrolling functionality for a better user experience.
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Usage
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+- Clone the repository to your local machine.
+- Open the `index.html` file in your preferred web browser to view the landing page.
+- Modify the `app.js` file to customize the navigation behavior and content toggling as needed.
+
+## Dependencies
+
+- This project uses vanilla JavaScript, HTML, and CSS.
+- No external libraries or frameworks are required.
+
+## Features
+
+- Dynamic navigation bar that updates as sections are added or removed.
+- Highlights the active section in the navigation bar based on the user's scroll position.
+- Smooth scrolling to sections when navigation links are clicked.
+- Toggle content visibility within sections using buttons.
+
+## Installation
+
+1. Clone the repository:
+   ```sh
+   git clone <repository_url>
+   ```
