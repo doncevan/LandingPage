@@ -214,6 +214,19 @@ section.active__class .landing__container::after {
   }
 }
 
+/* Add styles for active section on navbar */
+.menu__link.active {
+  background-color: #333;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Add styles for active section in the Viewport */
+.active__class {
+  background: rgba(63, 62, 134, 0.027);
+  border: 2px solid #14de5b;
+}
+
 /* Add styles for scroll-to-top button */
 #scrollToTopBtn {
   position: fixed;

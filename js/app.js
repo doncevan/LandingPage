@@ -35,7 +35,7 @@ const isInViewport = (section) => {
 const toggleContent = (button) => {
   const section = button.closest("section");
   const content = section.querySelector(".content");
-  content.style.display = content.style.display === "block" ? "none" : "block";
+  content.style.display = content.style.display === "none" ? "block" : "none";
 };
 
 /**
@@ -58,7 +58,7 @@ const setActiveSection = () => {
   sections.forEach((section) => {
     const navItem = navList.querySelector(`a[href='#${section.id}']`);
     const rect = section.getBoundingClientRect();
-    if (rect.top >= 150 && rect.bottom <= 150) {
+    if (rect.top >= -200 && rect.top <= 200) {
       // Adjusted range
       section.classList.add("active__class");
       navItem.classList.add("active");
@@ -74,7 +74,10 @@ const scrollToSection = (event) => {
   event.preventDefault();
   const targetId = event.target.getAttribute("href").slice(1);
   const targetSection = document.getElementById(targetId);
-  targetSection.scrollIntoView({ behavior: "smooth" });
+  const offset = 45; // Adjust this value as needed
+
+  const elementPosition = targetSection.getBoundingClientRect().top + window.scrollY - offset;
+  window.scrollTo({ top: elementPosition, behavior: "smooth" });
 };
 
 // Show or hide navbar on scroll event
@@ -116,6 +119,11 @@ window.addEventListener("scroll", handleScroll);
 scrollToTopBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+// Initialize content state
+document.querySelectorAll(".content").forEach((content) => {
+  content.style.display = "block";
+}); // Ensure content is displayed by default
 
 // Add toggle content functionality
 document.querySelectorAll(".toggle__button").forEach((button) => {
